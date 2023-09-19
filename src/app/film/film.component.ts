@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-film',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmComponent implements OnInit {
 
-  filmName: string = 'Jurrasic Park';
-  filmOnAir: string = 'En Blue Ray';
-  filmAffiche: string = "https://upload.wikimedia.org/wikipedia/fr/6/6a/Jurassic_Park_logo.svg"
+  @Input () filmName: string = '';
+  @Input () filmOnAir: string = '';
+  @Input () filmAffiche: string = '';
+
 
   constructor() { }
 
@@ -21,4 +22,8 @@ export class FilmComponent implements OnInit {
     return this.filmOnAir;
   }
 
+  onWatchFilm() {
+    console.log('Lecture du film démarée !');
+  }
+  
 }

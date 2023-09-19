@@ -1,4 +1,6 @@
 <li class="list-group-item">
-    <h3>Film: {{ filmName }} Visibilité : {{ getOnAir() }}</h3>
+    <h3>Film: {{ filmName }} | Visibilité : {{ getOnAir() }}</h3>
     <img class="affiche" [src]="filmAffiche">
+    <button class="btn_regarder border border-success shadow-none text-success" (click)="onWatchFilm()" >Regarder</button>
+    <!-- <input type="text" class="form-control" [(ngModel)]="filmName"> -->
 </li>
