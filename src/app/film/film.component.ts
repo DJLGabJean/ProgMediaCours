@@ -8,14 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FilmComponent implements OnInit {
 
   @Input () filmName: string = '';
-  @Input () filmOnAir: string = '';
+  @Input () filmOnAir: boolean = false;
   @Input () filmAffiche: string = '';
 
 
   constructor() { }
 
-  ngOnInit()  {
-    return this.filmName;
+  ngOnInit():  void {
   }
 
   getOnAir() {
@@ -24,6 +23,10 @@ export class FilmComponent implements OnInit {
 
   onWatchFilm() {
     console.log('Lecture du film démarée !');
+  }
+
+  changeColor() {
+    return this.filmOnAir ? 'purple' : 'red';
   }
   
 }

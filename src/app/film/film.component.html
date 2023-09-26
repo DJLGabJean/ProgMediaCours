@@ -1,12 +1,15 @@
-<li class="list-group-item">
-    <div class="onAir" *ngIf= "filmOnAir == 'Blue Ray'">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Blu-ray_Disc.svg" width="50px">
+<li [ngClass]=" { 'list-group-item' : true,
+                  'list-group-item-info' : filmOnAir == true,
+                  'list-group-item-warning' : filmOnAir == false 
+                }">
+    <div class="onAir" *ngIf= "filmOnAir == false">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Blu-ray_Disc.svg" width="50px" alt="Blue Ray">
     </div>
-    <div class="onAir" *ngIf= "filmOnAir == 'En Salle'">
-        <img src="https://static.vecteezy.com/ti/vecteur-libre/t2/5188413-cinema-logo-vector-template-isole-sur-fond-blanc-vectoriel.jpg" width="50px">
+    <div class="onAir" *ngIf= "filmOnAir == true">
+        <img src="https://static.vecteezy.com/ti/vecteur-libre/t2/5188413-cinema-logo-vector-template-isole-sur-fond-blanc-vectoriel.jpg" width="50px" alt="Cinéma">
     </div>
-    <h3>Film: {{ filmName }} | Visibilité : {{ getOnAir() }}</h3>
-    <img class="affiche" [src]="filmAffiche">
+    <h3 [ngStyle]="{color : changeColor()}"   >Film: {{ filmName }} --Visibilité : {{ getOnAir() }}</h3>
+    <img class="affiche" [src]="filmAffiche" alt="Image film">
     <button class="btn_regarder border border-success shadow-none text-success" (click)="onWatchFilm()" >Regarder</button>
     <!-- <input type="text" class="form-control" [(ngModel)]="filmName"> -->
 </li>
