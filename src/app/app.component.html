@@ -11,7 +11,11 @@
   </div>
 
   <ul class="list-group">
-    <app-film *ngFor="let film of films" [filmName]="film.title" [filmOnAir]="film.onAir" [filmAffiche]="film.filmAffiche" ></app-film>
+    <app-film *ngFor="let film of films; let i = index"
+      [filmName]="film.name" 
+      [filmOnAir]="film.onAir" 
+      [filmAffiche]="film.filmAffiche" 
+      [index]="i"></app-film>
   </ul>
   
 </body>

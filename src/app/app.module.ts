@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FilmComponent } from './film/film.component';
 import { FormsModule } from '@angular/forms';
 
+import { FilmService } from './services/film.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    FilmService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
