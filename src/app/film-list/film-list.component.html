@@ -3,7 +3,8 @@
       [filmName]="film.title"
       [filmOnAir]="film.onAir"
       [filmAffiche]="film.filmAffiche"
-      [index]="i"></app-film>
+      [index]="i"
+      [id]="film.id"></app-film>
   </ul>
   <button class="btn btn-outline-success" (click)="onAirAll()">En Salle</button>
   <button class="btn btn-outline-danger" (click)="noOnAirAll()">Pas en Salle</button>

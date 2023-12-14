@@ -12,6 +12,7 @@ export class FilmComponent implements OnInit {
   @Input () filmOnAir: boolean = false;
   @Input () filmAffiche: string = '';
   @Input () index: number = 0;
+  @Input() id = 0;
 
 
   constructor( 
