@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liste de films</title>
-</head>
-<body>
-  <div style="text-align: center;">
-    <h1>Welcome to {{ title }}!</h1>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a href="#" class="navbar-brand">Film</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link">Films</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Nouveau Film</a>
+      </li>
+    </ul>
   </div>
+</nav>
 
-  <ul class="list-group">
-    <app-film *ngFor="let film of films; let i = index"
-      [filmName]="film.name" 
-      [filmOnAir]="film.onAir" 
-      [filmAffiche]="film.filmAffiche" 
-      [index]="i"></app-film>
-  </ul>
-  
-</body>
-</html>
-
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

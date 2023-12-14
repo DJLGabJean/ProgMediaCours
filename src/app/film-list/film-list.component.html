@@ -1,1 +1,10 @@
-<p>film-list works!</p>
+<ul class="list-group">
+    <app-film *ngFor="let film of films; let i = index"
+      [filmName]="film.title"
+      [filmOnAir]="film.onAir"
+      [filmAffiche]="film.filmAffiche"
+      [index]="i"></app-film>
+  </ul>
+  <button class="btn btn-outline-success" (click)="onAirAll()">En Salle</button>
+  <button class="btn btn-outline-danger" (click)="noOnAirAll()">Pas en Salle</button>
+
